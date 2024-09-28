@@ -1,14 +1,19 @@
 package org.example;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class EjercicioUno {
-    public static void main(String[] args) {
+    public void ejerciciouno() {
         int num;
+        boolean error= true;
+        Scanner entrada = new Scanner(System.in);
 
         System.out.println("Introduce un número:");
-        Scanner entrada = new Scanner(System.in);
+
         num= entrada.nextInt();
+while (error==true){
+
 
         if (num==0) {
             System.out.print("El número es natural");
@@ -21,6 +26,14 @@ public class EjercicioUno {
                 System.out.println("El número es negativo");
             }
         }
+    try{
+        System.out.println("Introduce un número:");
+        num= entrada.nextInt();
+    }catch (InputMismatchException Er){
+        System.out.println("El valor introducido no es válido");
+        entrada.nextLine();
+    }
+}
 
     }
 }
