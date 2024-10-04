@@ -8,11 +8,11 @@ public class Multiplicaciones {
 
         int multiplicando = 0;
         int multiplicador = 0;
-        int resultado = 0;
+        int resultado;
         boolean error = true;
 
         Scanner entrada = new Scanner(System.in);
-        while (error == true) {
+        while (error) {
             try {
 
                 System.out.println("Introduce el multiplicando (3 cifras):");
@@ -25,16 +25,17 @@ public class Multiplicaciones {
                 System.out.println("Error!! El valor introducido no es válido");
                 entrada.nextLine();
             }
-        }
 
+        }
             boolean esMultiplicadorNegativo = multiplicador < 0;
 
             if (esMultiplicadorNegativo) {
                 multiplicador = multiplicador * -1;
             }
-
             if (multiplicando == 0 || multiplicador == 0) {
                 System.out.println("El producto de la multiplicación es: 0");
+            }if (multiplicador>999 || multiplicando>999 || multiplicador<-999 || multiplicando<-999){
+                    System.out.println("Uno de los números introducidos tiene más de tres cifras");
             } else {
                 String multiplicadorC = Integer.toString(multiplicador);
                 String multiplicadorCentenas = multiplicadorC.substring(0,1);
@@ -61,7 +62,7 @@ public class Multiplicaciones {
                 System.out.println("X " + multiplicador);
                 System.out.println("_________");
                 System.out.println("  "+suma1);
-                System.out.println(suma2+"x");
+                System.out.println("  "+suma2+"x");
                 System.out.println(suma3+"xx");
                 System.out.println("_________");
                 System.out.println(resultado);
